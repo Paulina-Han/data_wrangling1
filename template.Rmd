@@ -33,3 +33,9 @@ view(litters_df)
 
 ```
 
+here is skier
+```{r}
+skimr::skim(litters_df)
+
+```
+
