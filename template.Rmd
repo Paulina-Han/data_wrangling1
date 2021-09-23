@@ -1,0 +1,35 @@
+---
+title: "Simple document"
+output: github_document
+---
+
+```{r, echo=FALSE, message=FALSE}
+library(tidyverse)
+
+```
+
+
+##import data
+
+i want to import `FAS_litters.csv`.
+
+```{r}
+litters_df=read.csv('data/data_import_examples/FAS_litters.csv') #re;ative
+
+#relative path always gonna work; the direct path doesn't work if you share the the R and data
+```
+
+```{r}
+names(litters_df)
+
+litters_df = janitor::clean_names(litters_df) #only load clean_names
+
+tibble(litters_df)#show the typw of var
+```
+one I use a lot
+
+```{r, eval=FALSE}
+view(litters_df)
+
+```
+
