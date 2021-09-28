@@ -42,9 +42,9 @@ skimr::skim(litters_df)
 
 ```{r, }
 litters_df =
-  read.csv("data/data_import_examples/FAS_litters.csv",
+  read_csv("data/data_import_examples/FAS_litters.csv",
            skip= 5,
-           
+           col_names=F,
            na = "Low8")
 ```
 
@@ -64,7 +64,7 @@ fellow_df = read_excel("data/data_import_examples/LotR_Words.xlsx", range = "B3:
 ```
 
 ## read SAS
-```{r, eval=FALSE}
+```{r}
 library(haven)
 pulse_df = read_sas("./data/data_import_examples/public_pulse_data.sas7bdat",encoding = "latin1")
 
