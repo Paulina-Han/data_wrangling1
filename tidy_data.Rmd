@@ -10,7 +10,8 @@ library(readxl)
 library(haven)
 ```
 
-## pivot longer
+## pivot longer 
+don't use gather
 
 ```{r}
 pulse_df = 
@@ -33,7 +34,8 @@ pulse_tidy_data =
 ```
 
 
-
+## pivot_wider
+don't use spread!
 
 ```{r}
 analysis_result = tibble(
@@ -97,7 +99,16 @@ litters_df =
 pups_df = 
   read_csv("./data_import_examples/data_import_examples/FAS_pups.csv") %>%
   janitor::clean_names()%>%
-  mutate(sex = recode(sex, `1`="male")) #make `1` into a character
+  mutate(sex = recode(sex, `1`="male", `2`="female")) #make `1` into a character
 ```
+ 
+ lets join these up
+
+```{r}
+fas_df = 
+  left_join(pups_df, litters_df,  by ="litter_number") %>% 
+  relocate(litter_number,dose,day_of_tx)
+```
+
 
 
