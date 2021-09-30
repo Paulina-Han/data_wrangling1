@@ -2,7 +2,8 @@
 title: "tidy_data"
 author: "Paulina Han"
 date: "2021/9/30"
-output: git_document
+output: github_document
+  
 ---
 ```{r, echo=FALSE, message=FALSE}
 library(tidyverse)
